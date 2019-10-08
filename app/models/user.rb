@@ -4,7 +4,7 @@ class User < ApplicationRecord
     has_many :favorites
     has_many :recipes, through: :favorites
 
-    validates :name, :username, :email, :password, :presense => true
-    validates :username, :uniqueness => true
+    validates :name, :username, :email, presence: true
+    validates :username, uniqueness: true
 
 end
