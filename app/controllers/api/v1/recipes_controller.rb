@@ -12,12 +12,39 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
+        @recipe = Recipe.find_by(title: params[:title])
 
+        if @recipe
+            params[:user_id] = current_user.id
+            params[:recipe_id] = @recipe.id
+            @favorite = Favorite.find_by(user_id: params[:user_id], recipe_id: params[:recipe_id])
+
+            if @favorite
+                render json: { error: "Already added to favorites!"}
+            else
+                @favorite = Favorite.create(:user_id => params[:user_id], :recipe_id => params[:recipe_id])
+                render json: @favorite, status: :created
+            end
+        else
+            @recipe = Recipe.new(recipe_params)
+            if @recipe.save
+                params[:user_id] = current_user.id 
+                params[:recipe_id] = @recipe.id 
+                @favorite = Favorite.create(:user_id => params[:user_id], :recipe_id => params[:recipe_id])
+                render json: :created
+            else
+                render json: @recipe.errors, status: :unprocessable_entity
+            end
+        end
     end
 
 
     def update
-
+        if @recipe.update(recipe_params)
+            render json: @recipe
+        else
+            render json: @recipe.errors, status: :unprocessable_entity
+        end
     end
 
     def destroy
