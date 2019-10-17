@@ -12,9 +12,9 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.find_by(title: params[:title])
+        @recipe = Recipe.find_by(recipe_title: params[:title])
 
-        if @recipe
+        if @recipe 
             params[:user_id] = current_user.id
             params[:recipe_id] = @recipe.id
             @favorite = Favorite.find_by(user_id: params[:user_id], recipe_id: params[:recipe_id])
@@ -58,7 +58,7 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def recipe_params
-        params.require(:recipe).permit(:title, :recipe_identifier)
+        params.require(:recipe).permit(:recipe_title, :recipe_identifier)
     end
 
 end
