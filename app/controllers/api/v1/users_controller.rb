@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
-        render json: @user 
+        render json: UserSerializer.new(@user, include: [:favorites]).serialized_json
     end
 
     def create
@@ -18,10 +18,8 @@ class Api::V1::UsersController < ApplicationController
             session[:user_id] = @user.id
             render json: UserSerializer.new(@user), status: :created 
         else
-            resp = {
-                error: @user.errors.full_messages.to_sentence
-              }
-              render json: resp, status: :unprocessable_entity
+            err = {error: @user.errors.full_messages.to_sentence}
+            render json: err, status: :unprocessable_entity
         end
     end 
 
