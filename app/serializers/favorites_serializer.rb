@@ -8,4 +8,8 @@ class FavoritesSerializer
     attribute :recipe_identifier do |object|
         object.recipe.recipe_identifier
     end
+
+    attribute :recipe_image do |object|
+        object.recipe.recipe_image
+    end
 end
