@@ -12,7 +12,7 @@ class Api::V1::RecipesController < ApplicationController
     end
 
     def create
-        @recipe = Recipe.find_by(recipe_title: params[:title])
+        @recipe = Recipe.find_by(recipe_title: params[:recipe_title])
 
         if @recipe 
             params[:user_id] = current_user.id
