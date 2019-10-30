@@ -32,7 +32,11 @@ class Api::V1::FavoritesController < ApplicationController
     end
 
     def destroy
-        @favorite.destroy
+        if @favorite.destroy
+            render json: { data: "Removed from Favorites" }, status: :ok
+        else
+            render json: { data: "Favorite not found" }, status: :unprocessable_entity
+        end
     end
 
     private
