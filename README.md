@@ -2,7 +2,7 @@
 
 ### Description
 
-Rcipe Finder is a web application that allows a user to create an account by clicking the Sign Up option. Once a user is registered, they can search for recipes by entering an ingredient into the search field which will return 20 recipes which include the entered ingredient. Your favorite recipes can be saved by the user in their profile under favorites. Each recipe will is linked to its external site or origin where more information can be found about it.
+Recipe Finder is a web application that allows a user to create an account by clicking the Sign Up option. Once a user is registered, they can search for recipes by entering an ingredient into the search field which will return 20 recipes which include the entered ingredient. Your favorite recipes can be saved by the user in their profile under favorites. Each recipe will is linked to its external site or origin where more information can be found about it.
 
 ## Installation & Usage
 
