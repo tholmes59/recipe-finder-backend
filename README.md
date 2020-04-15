@@ -18,4 +18,4 @@ The Recipe Finder App is licensed under the [MIT license](https://opensource.org
 
 ##  Code of Conduct
 
-Everyone interacting in the Fitness-app project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+Everyone interacting in the Recipe Finder App project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
