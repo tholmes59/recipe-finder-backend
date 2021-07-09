@@ -10,7 +10,8 @@ Recipe Finder is a web application that allows a user to create an account by cl
 2. Clone the [frontend](https://github.com/tholmes59/recipe-finder-frontend) React/Redux repository 
 3. Run `bundle install` in the terminal of the backend directory to install all app dependencies
 4. Run `rails s` in the terminal of the backend directory to start the Rails server
-5. Run `npm start` in the terminal of the frontend directory to run the app in the browser
+5. Run `npm install` in the terminal of the frontend directory to make sure the latest version of NPM is installed
+6. Run `npm start` in the terminal of the frontend directory to run the app in the browser
 
 ## License
 
